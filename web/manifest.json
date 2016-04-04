@@ -1,0 +1,90 @@
+{
+    "description": "Enter as many parts as you want in this list. Available substitution variables are designName (RR), size (100), and handedness (left or right). In addition, whole parts can be excluded from an assembly by specifying the handedness here. The handedness string will be searched for the hand the user has requested (left or right), and if a match is found the part will be included. So ambidextrous parts can be labeled 'left right' to be included in all hands, and 'handed' parts can include only left or right in the handedness string",
+    "displayModel": "../batch%20STL%20sizing/LimbForge/decimated_full_assembly_100_percent.stl",
+    "parts": [
+        {
+            "qty": 1,
+            "name": "thermobracer",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_RDT_thermobracer/",
+            "file_name_template": "<%= designName %>_RDT_thermobracer_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 1,
+            "name": "distal phalange",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_distal_phalange/",
+            "file_name_template": "<%= designName %>_distal_phalange_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 5,
+            "name": "finger pin",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_finger_pin/",
+            "file_name_template": "<%= designName %>_5x_finger_pin_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 2,
+            "name": "knuckle pin",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_knuckle_pin/",
+            "file_name_template": "<%= designName %>_2x_knuckle_pin_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 1,
+            "name": "left palm",
+            "handedness": "left",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_left_palm/",
+            "file_name_template": "<%= designName %>_left_palm_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 1,
+            "name": "right palm",
+            "handedness": "right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_right_palm/",
+            "file_name_template": "<%= designName %>_right_palm_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 1,
+            "name": "proximal phalange",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_proximal_phalange/",
+            "file_name_template": "<%= designName %>_proximal_phalange_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 1,
+            "name": "tensioner",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_tensioner/",
+            "file_name_template": "RR_tensioner.stl"
+        },
+        {
+            "qty": 1,
+            "name": "tensioner pins",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_tensioner_pins/",
+            "file_name_template": "<%= designName %>RR_3x_tensioner_pin.stl"
+        },
+        {
+            "qty": 1,
+            "name": "thumb pin",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_thumb_pin/",
+            "file_name_template": "<%= designName %>_thumb_pin_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 2,
+            "name": "wrist pin",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_wrist_pin/",
+            "file_name_template": "<%= designName %>_2x_wrist_pin_<%= size %>_percent.stl"
+        },
+        {
+            "qty": 2,
+            "name": "wrist pin cap",
+            "handedness": "left right",
+            "file_dir_template": "../batch%20STL%20sizing/LimbForge/<%= designName %>_wrist_pin_cap/",
+            "file_name_template": "<%= designName %>_2x_wrist_pin_cap_<%= size %>_percent.stl"
+        }
+    ]
+}
