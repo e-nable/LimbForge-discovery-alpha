@@ -36,3 +36,5 @@ To run our server type:
 ```
 npm start
 ```
+
+Go to [localhost:8080](http://localhost:8080) to check out the site!
