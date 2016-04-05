@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node_modules/node-sass/bin/node-sass --output-style compressed scss/main.scss css/main.css",
-    "dev": "npm run build & node_modules/node-sass/bin/node-sass --output-style compressed --watch scss --output css css/main.scss & npm run serve",
-    "serve": "node_modules/http-server/bin/http-server"
+    "serve": "node_modules/http-server/bin/http-server",
+    "start": "npm run build & node_modules/node-sass/bin/node-sass --output-style compressed --watch scss --output css css/main.scss & npm run serve"
   },
   "repository": {
     "type": "git",
