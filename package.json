@@ -4,20 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node_modules/node-sass/bin/node-sass --output-style compressed scss/main.scss css/main.css",
+    "dev": "npm run build & node_modules/node-sass/bin/node-sass --output-style compressed --watch scss --output css css/main.scss & npm run serve",
+    "serve": "node_modules/http-server/bin/http-server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/e-nable/LimbForge.git"
   },
-  "author": "Matt Hova",
+  "author": "Edward Nable",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/e-nable/LimbForge/issues"
   },
-  "homepage": "https://github.com/e-nable/LimbForge#readme",
-  "dependencies": {
-    "http-server": "^0.9.0",
-    "node-sass": "^3.4.2"
-  }
+  "homepage": "https://github.com/e-nable/LimbForge#readme"
 }
