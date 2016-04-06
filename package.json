@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/e-nable/LimbForge/issues"
   },
-  "homepage": "https://github.com/e-nable/LimbForge#readme"
+  "homepage": "https://github.com/e-nable/LimbForge#readme",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "node-sass": "^3.4.2"
+  }
 }
