@@ -13,77 +13,77 @@
             "qty": 1,
             "name": "distal phalange",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_distal_phalange/",
+            "file_dir_template": "STLs/RR/<%= designName %>_distal_phalange/",
             "file_name_template": "<%= designName %>_distal_phalange_<%= size %>_percent.stl"
         },
         {
             "qty": 5,
             "name": "finger pin",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_finger_pin/",
+            "file_dir_template": "STLs/RR/<%= designName %>_finger_pin/",
             "file_name_template": "<%= designName %>_5x_finger_pin_<%= size %>_percent.stl"
         },
         {
             "qty": 2,
             "name": "knuckle pin",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_knuckle_pin/",
+            "file_dir_template": "STLs/RR/<%= designName %>_knuckle_pin/",
             "file_name_template": "<%= designName %>_2x_knuckle_pin_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "left palm",
             "handedness": "left",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_left_palm/",
+            "file_dir_template": "STLs/RR/<%= designName %>_left_palm/",
             "file_name_template": "<%= designName %>_left_palm_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "right palm",
             "handedness": "right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_right_palm/",
+            "file_dir_template": "STLs/RR/<%= designName %>_right_palm/",
             "file_name_template": "<%= designName %>_right_palm_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "proximal phalange",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_proximal_phalange/",
+            "file_dir_template": "STLs/RR/<%= designName %>_proximal_phalange/",
             "file_name_template": "<%= designName %>_proximal_phalange_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "tensioner",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_tensioner/",
+            "file_dir_template": "STLs/RR/<%= designName %>_tensioner/",
             "file_name_template": "RR_tensioner.stl"
         },
         {
             "qty": 1,
             "name": "tensioner pins",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_tensioner_pins/",
-            "file_name_template": "<%= designName %>RR_3x_tensioner_pin.stl"
+            "file_dir_template": "STLs/RR/<%= designName %>_tensioner_pins/",
+            "file_name_template": "<%= designName %>_3x_tensioner_pin.stl"
         },
         {
             "qty": 1,
             "name": "thumb pin",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_thumb_pin/",
+            "file_dir_template": "STLs/RR/<%= designName %>_thumb_pin/",
             "file_name_template": "<%= designName %>_thumb_pin_<%= size %>_percent.stl"
         },
         {
             "qty": 2,
             "name": "wrist pin",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_wrist_pin/",
+            "file_dir_template": "STLs/RR/<%= designName %>_wrist_pin/",
             "file_name_template": "<%= designName %>_2x_wrist_pin_<%= size %>_percent.stl"
         },
         {
             "qty": 2,
             "name": "wrist pin cap",
             "handedness": "left right",
-            "file_dir_template": "STLs/RR/LimbForge/<%= designName %>_wrist_pin_cap/",
+            "file_dir_template": "STLs/RR/<%= designName %>_wrist_pin_cap/",
             "file_name_template": "<%= designName %>_2x_wrist_pin_cap_<%= size %>_percent.stl"
         }
     ]
