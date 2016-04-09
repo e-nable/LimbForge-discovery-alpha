@@ -50,6 +50,10 @@ function init() {
     var axisHelper = new THREE.AxisHelper( 30 );
     scene.add( axisHelper );
 
+    // Grid for scale reference
+    var gridHelper = new THREE.GridHelper( 200, 10 ); // THREE.GridHelper(size,step)
+    scene.add( gridHelper );
+
     container.appendChild( renderer.domElement );
 
     window.addEventListener( 'resize', onWindowResize, false );
