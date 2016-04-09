@@ -41,7 +41,7 @@ $(document).ready(function(){
             .then(function(manifest){
                 //////////////// Go !
                 hl = new HandLoader(manifest,design);
-                updateHand();
+                reloadDisplayHand();
             });
     }
 
@@ -55,10 +55,10 @@ $(document).ready(function(){
         step: 10,
         slide: function( event, ui ) {
             $( "#sizeFeedback" ).text( "Size: " + ui.value + "%" );
+            hl.setDisplayModelSize(ui.value);
         },
         stop: function( event, ui) {
             specs.size = ui.value;
-            updateHand();
         }
     });
 
@@ -68,7 +68,6 @@ $(document).ready(function(){
         $handSelectors.removeClass("selected");
         $(this).addClass("selected");
         specs.hand = $(this).data("selectedhand");
-        updateHand();
     });
 
     // Download Button
@@ -96,7 +95,7 @@ $(document).ready(function(){
         }
     }
 
-    function updateHand(){
+    function reloadDisplayHand(){
         // Remove any prior hand that was there
         clearScene();
 

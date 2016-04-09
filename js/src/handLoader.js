@@ -1,6 +1,8 @@
 var HandLoader = function(manifest,design){
     if (!manifest || !manifest.parts) throw new Error("Expected a manifest with a parts array.");
 
+    var currentMesh;
+
     function getParts(hand,size,design){
 
 
@@ -29,6 +31,7 @@ var HandLoader = function(manifest,design){
             mesh.rotation.set(0,0,0 );
             mesh.position.set(0,0,0);
 
+            currentMesh = mesh;
             scene.add( mesh );
             if (cb) cb(data);
         } );
@@ -37,6 +40,12 @@ var HandLoader = function(manifest,design){
     return {
         loadDisplayHand : function(hand,size,design,cb){
             loadDisplayModel(hand,size,design,cb);
+        },
+        setDisplayModelSize: function(size) {
+            if (currentMesh) {
+                currentMesh.scale.set(size/100,size/100,size/100);
+                render();
+            }
         },
         getFiles: function(hand,size,design,successCallback,errorCallback){
             var parts = getParts(hand,size,design);
