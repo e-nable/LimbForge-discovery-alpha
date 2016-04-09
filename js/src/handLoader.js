@@ -1,7 +1,7 @@
 var HandLoader = function(manifest,design){
     if (!manifest || !manifest.parts) throw new Error("Expected a manifest with a parts array.");
 
-    var currentMesh,
+    var currentMesh, originalMesh, flippedMesh,
         flipped = false;
 
     function getParts(hand,size,design){
@@ -33,10 +33,44 @@ var HandLoader = function(manifest,design){
             mesh.rotation.set(-Math.PI*0.45,0,0 );
             mesh.position.set(0,0,0);
 
-            currentMesh = mesh;
             scene.add( mesh );
+
+            // Store references so the display model can be manipulated
+            originalMesh = currentMesh = mesh;
+            flippedMesh = generateFlippedMeshFromMesh(mesh);
+
             if (cb) cb(data);
         } );
+    }
+
+    function generateFlippedMeshFromMesh(mesh){
+        // create separate mesh for flipped view. Lighting on flipped faces looks super weird.
+        // See http://stackoverflow.com/questions/27722441/loading-object-as-geometry-instead-of-buffergeometry-in-threejs
+        var flippedGeometry = new THREE.Geometry().fromBufferGeometry( mesh.geometry );
+        flippedGeometry.dynamic = true;
+
+        for (var i = 0, l = flippedGeometry.faces.length; i < l; i++) {
+
+            var face = flippedGeometry.faces[i];
+            var temp = face.a;
+            face.a = face.c;
+            face.c = temp;
+
+        }
+
+        var faceVertexUvs = flippedGeometry.faceVertexUvs[0];
+        for (i = 0, l = faceVertexUvs.length; i < l; i++) {
+
+            var vector2 = faceVertexUvs[i][0];
+            faceVertexUvs[i][0] = faceVertexUvs[i][2];
+            faceVertexUvs[i][2] = vector2;
+        }
+
+        var flipped = new THREE.Mesh( flippedGeometry, mesh.material );
+        flipped.rotation.set(mesh.rotation.x,mesh.rotation.y,mesh.rotation.z );
+        flipped.scale.set(-1,1,1);
+
+        return flipped;
     }
 
     return {
@@ -51,7 +85,18 @@ var HandLoader = function(manifest,design){
         },
         flip: function(flip){
             flipped = flip;
-            currentMesh.scale.set((flip ? -1 : 1 ) * Math.abs(currentMesh.scale.x),currentMesh.scale.y,currentMesh.scale.z);
+
+            var currScale = Math.abs(currentMesh.scale.y);
+
+            flippedMesh.scale.set(-1*currScale,currScale,currScale);
+            originalMesh.scale.set(currScale,currScale,currScale);
+
+            currentMesh = flipped ? flippedMesh : originalMesh;
+            var otherMesh = flipped ? originalMesh : flippedMesh;
+
+            scene.remove(otherMesh);
+            scene.add(currentMesh);
+
             render();
         },
         getFiles: function(hand,size,design,successCallback,errorCallback){
