@@ -17,8 +17,20 @@ $(document).ready(function(){
         // store reference to full list of designs so they can be shown in a drop down.
         designs = data["designs"];
 
+        // Populate design dropdown
+        var $selector = $('#designSelector');
+        _.each(designs,function(des){
+            $selector.append("<option value='"+des.name+"'>"+des.name+"</option>");
+        });
+
+        // Listen for change events so the design can be selected
+        $selector.on('change',function(e){
+            var selected = _.findWhere(designs,{name: $(e.target).val()});
+            selectDesign(selected);
+        });
+
         // Load up the first design by default (raptor reloaded as of this writing)
-        return selectDesign(designs[0]);
+        $selector.trigger("change");
     });
 
     function selectDesign(design){
