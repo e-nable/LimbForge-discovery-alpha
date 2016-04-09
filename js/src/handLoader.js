@@ -1,7 +1,8 @@
 var HandLoader = function(manifest,design){
     if (!manifest || !manifest.parts) throw new Error("Expected a manifest with a parts array.");
 
-    var currentMesh;
+    var currentMesh,
+        flipped = false;
 
     function getParts(hand,size,design){
 
@@ -22,6 +23,7 @@ var HandLoader = function(manifest,design){
         loader.load( design.directory + manifest["displayModel"], function ( geometry, data ) {
 
             var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
+            material.side = THREE.DoubleSide;
             var mesh = new THREE.Mesh( geometry, material );
             mesh.castShadow = true;
             mesh.receiveShadow = true;
@@ -43,9 +45,14 @@ var HandLoader = function(manifest,design){
         },
         setDisplayModelSize: function(size) {
             if (currentMesh) {
-                currentMesh.scale.set(size/100,size/100,size/100);
+                currentMesh.scale.set((flipped ? -1 : 1 ) * size/100,size/100,size/100);
                 render();
             }
+        },
+        flip: function(flip){
+            flipped = flip;
+            currentMesh.scale.set((flip ? -1 : 1 ) * Math.abs(currentMesh.scale.x),currentMesh.scale.y,currentMesh.scale.z);
+            render();
         },
         getFiles: function(hand,size,design,successCallback,errorCallback){
             var parts = getParts(hand,size,design);

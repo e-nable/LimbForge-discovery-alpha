@@ -68,6 +68,7 @@ $(document).ready(function(){
         $handSelectors.removeClass("selected");
         $(this).addClass("selected");
         specs.hand = $(this).data("selectedhand");
+        hl.flip(specs.hand == "right");
     });
 
     // Download Button
