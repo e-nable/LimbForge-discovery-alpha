@@ -51,8 +51,8 @@ $(document).ready(function(){
         range:       false,
         value:      specs.size,
         min: 100,
-        max: 150,
-        step: 5,
+        max: 200,
+        step: 10,
         slide: function( event, ui ) {
             $( "#sizeFeedback" ).text( "Size: " + ui.value + "%" );
             hl.setDisplayModelSize(ui.value);
