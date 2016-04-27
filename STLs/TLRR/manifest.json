@@ -10,18 +10,18 @@
             "file_name_template": "RR_RDT_thermobracer_<%= size %>_percent.stl"
         },
         {
-            "qty": 1,
+            "qty": 4,
             "name": "distal phalange",
             "handedness": "left right",
             "file_dir_template": "RR_distal_phalange/",
-            "file_name_template": "RR_distal_phalange_<%= size %>_percent.stl"
+            "file_name_template": "RR_4x_distal_phalange_<%= size %>_percent.stl"
         },
         {
-            "qty": 5,
+            "qty": 4,
             "name": "finger pin",
             "handedness": "left right",
             "file_dir_template": "RR_finger_pin/",
-            "file_name_template": "RR_5x_finger_pin_<%= size %>_percent.stl"
+            "file_name_template": "RR_4x_finger_pin_<%= size %>_percent.stl"
         },
         {
             "qty": 2,
@@ -34,43 +34,36 @@
             "qty": 1,
             "name": "left palm",
             "handedness": "left",
-            "file_dir_template": "RR_left_palm/",
-            "file_name_template": "RR_left_palm_<%= size %>_percent.stl"
+            "file_dir_template": "TLRR_left_palm/",
+            "file_name_template": "TLRR_left_palm_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "right palm",
             "handedness": "right",
-            "file_dir_template": "RR_right_palm/",
-            "file_name_template": "RR_right_palm_<%= size %>_percent.stl"
+            "file_dir_template": "TLRR_right_palm/",
+            "file_name_template": "TLRR_right_palm_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "proximal phalange",
             "handedness": "left right",
             "file_dir_template": "RR_proximal_phalange/",
-            "file_name_template": "RR_proximal_phalange_<%= size %>_percent.stl"
+            "file_name_template": "RR_4x_proximal_phalange_<%= size %>_percent.stl"
         },
         {
             "qty": 1,
             "name": "tensioner",
             "handedness": "left right",
-            "file_dir_template": "RR_tensioner/",
-            "file_name_template": "RR_tensioner.stl"
+            "file_dir_template": "TLRR_tensioner/",
+            "file_name_template": "TLRR_tensioner.stl"
         },
         {
-            "qty": 1,
+            "qty": 2,
             "name": "tensioner pins",
             "handedness": "left right",
             "file_dir_template": "RR_tensioner_pins/",
-            "file_name_template": "RR_3x_tensioner_pin.stl"
-        },
-        {
-            "qty": 1,
-            "name": "thumb pin",
-            "handedness": "left right",
-            "file_dir_template": "RR_thumb_pin/",
-            "file_name_template": "RR_thumb_pin_<%= size %>_percent.stl"
+            "file_name_template": "RR_2x_tensioner_pin.stl"
         },
         {
             "qty": 2,
