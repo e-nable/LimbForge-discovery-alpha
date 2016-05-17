@@ -1,6 +1,8 @@
-# LimbForge R&D Development Tool
+# LimbForge 
 
-This is a tool for enabling easy scaling of .stl files by a web client. The files can then be inspected in the browser's 3D canvas and downloaded as a single zip file.
+This is a tool for enabling easy sizing of e-NABLE device files by a web client. The files can then be inspected in the browser's 3D canvas and downloaded as a single zip file.
+
+For more information about the project, the approach, and on-boarding new device designs into LimbForge, [__please visit the wiki__](https://github.com/e-nable/LimbForge/wiki).
 
 ### Setting up your dev environment
 #### (Note: these instructions are for Linux and OS X)
