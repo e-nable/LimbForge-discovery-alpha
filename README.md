@@ -1,5 +1,5 @@
 #LimbForge
-Welcome to LimbForge!  LimbForge is a tool for precisely sizing upper limb assistive devices for 3D printing.  
+Welcome to LimbForge!  LimbForge is a tool for precisely sizing upper limb assistive devices for 3D printing.  If you are interested in helping to develop LimbForge, please visit the [issues page](https://github.com/e-nable/LimbForge/issues) to see what is under active and future development. If youa are a designer interested in on-boarding a new design, [please visit the wiki](https://github.com/e-nable/LimbForge/wiki) for more detailed information about the requirements and on-boarding process.
 
 ## How LimbForge Works
 LimbForge leverages look-up tables populated with pre-sized versions of every part needed to assemble a device.  Historically, "sizing" has meant linear scaling in the lexicon of e-NABLE devices, but LimbForge allows for a more intentional sizing strategy that has many benefits, including, but not limited to:
