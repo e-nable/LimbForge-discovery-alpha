@@ -1,42 +1,29 @@
-# LimbForge 
+#LimbForge
+Welcome to the LimbForge wiki!  This is where you can learn how to prep new designs for deployment via LimbForge as well as learn more about how LimbForge is structured.
 
-This is a tool for enabling easy sizing of e-NABLE device files by a web client. The files can then be inspected in the browser's 3D canvas and downloaded as a single zip file.
+## Adding New Designs to LimbForge
+[__See here for instructions on how to add a new design to LimbForge.__](https://github.com/e-nable/LimbForge/wiki/How-to-Add-a-New-Design-to-LimbForge)  We've designed the process to be simple to reduce the barrier to on-boarding new designs.  Please provide any feedback on the issues page.
 
-For more information about the project, the approach, and on-boarding new device designs into LimbForge, [__please visit the wiki__](https://github.com/e-nable/LimbForge/wiki).
+## How LimbForge Works
+LimbForge leverages look-up tables populated with pre-sized versions of every part needed to assemble a device.  Historically, "sizing" has meant linear scaling in the lexicon of e-NABLE devices, but LimbForge allows for a more intentional sizing strategy that has many benefits, including, but not limited to:
+* Persistent mechanical clearances across all sizes of device
+* Persistent hole sizes for screws or other non-printed hardware
+* Persistent interfaces to allow for greater simplicity and fewer part variations
 
-### Setting up your dev environment
-#### (Note: these instructions are for Linux and OS X)
-Install Node. My personal favorite way of installing and managing node is with NVM (Node Version Manager).  
-Copy this script into your terminal
-```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-```
+![](https://github.com/e-nable/LimbForge/blob/gh-pages/img/documentation/fusion_params.png)
 
-Now we're going to run a few steps to get NVM up and running.  
-**Copy and paste** the code below into your terminal. It will do the following:
-- Set nvm to run whenever you open a terminal
-```
-sudo echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
-```
-- Run nvm for this terminal window instance
-```
-. ~/.nvm/nvm.sh
-```
-- Download your favorite version of Node. For this project, we will be using Node V5.10  
-```
-nvm install v5.10
-nvm alias default v5.10
-```
+Look-up tables for a design can be created manually or with [Hans Kellner's ParaParam script for Fusion 360](https://github.com/hanskellner/Fusion360ParaParam).  Using a script like ParaParam in a parametric CAD tool allows for the greatest agility in populating and updating the look-up tables as changes to the master geometry can be rapidly propagated to all other sizes.  
 
-As of now, the dev environment is only a Sass compiler and a file server. To download the required tools, type:  
-```
-npm install
-```
+## Strengths of the Approach
+The look-up table strategy is tool-agnostic, though some tools (parametric CAD) will be easier than others, though there are likely scriptable mesh-based solutions that would work well.  In addition to being an open platform for device distribution, the simplicity of the look-up table makes the on-boarding process very accessible.  This approach also supports hybrid designs, in which some parts remain linearly-scaled meshes and other parts are parametrically-driven to eliminate the inconsistent clearances evolved from this linear scaling.  
 
-Okay, all the tough stuff is done.
-To run our server type:  
-```
-npm start
-```
+Perhaps most importantly, the size-invariant holes and other features and interfaces allow for dramatic simplification in the fasteners and other materials necessary to assemble a device.  This also opens up device architecture to much more effectively leverage off-the-shelf components and hardware that could not have been effective across all sizes previously.  
 
-Go to [localhost:8080](http://localhost:8080) to check out the site!
+## Limitations of the Approach
+As designs become more and more configurable, the number of files necessary to fully define the design grows. Maintaining consistent interfaces between parts will be critical to the adaptability of the tool to more complex designs.
+
+## The Importance of Instrumentation and Feedback
+LimbForge is instrumented with Google Analytics to collect data about what hand designs and at what sizes are created.  Nobody knows how many e-NABLE devices have been produced, at what sizes, or which designs.  By measuring what sizes are downloaded most often and which designs are more popular, we can better inform the efforts of e-NABLE designers to better align with the observed (and quantified) need.  Longer term, we intend to integrate better tools for feedback into LimbForge to capture both fabricator and recipient comments and critiques of the designs.
+
+## Looking Forward
+There's still a lot to do to fully realize the potential of the system that LimbForge enables, but the goal is build an instrumented tool that in addition to empowering its users, provides the data necessary to guide its developers and designers so that both are making an impact.
