@@ -79,7 +79,7 @@ $(document).ready(function(){
 
 
     function zipFileName(specs){
-        return "HandForge_" + specs.hand + "_" + specs.size + ".zip";
+        return "LimbForge_" + specs.hand + "_" + specs.size + ".zip";
     }
 
     function GAObjectForSpecs(specs){
