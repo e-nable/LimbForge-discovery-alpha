@@ -9,7 +9,9 @@ LimbForge leverages look-up tables populated with pre-sized versions of every pa
 
 ![](https://github.com/e-nable/LimbForge/blob/gh-pages/img/documentation/fusion_params.png)
 
-Look-up tables for a design can be created manually or with [Hans Kellner's ParaParam script for Fusion 360](https://github.com/hanskellner/Fusion360ParaParam).  Using a script like ParaParam in a parametric CAD tool allows for the greatest agility in populating and updating the look-up tables as changes to the master geometry can be rapidly propagated to all other sizes.  
+Look-up tables for a design can be created manually or with [Hans Kellner's ParaParam script for Fusion 360](https://github.com/hanskellner/Fusion360ParaParam).  Using a script like ParaParam in a parametric CAD tool allows for the greatest agility in populating and updating the look-up tables as changes to the master geometry can be rapidly propagated to all other sizes.  See below for a more detailed tour of LimbForge and its functionality:
+
+[![Early tests of LimbForge](http://img.youtube.com/vi/YvI6kq_yXaM/0.jpg)](https://www.youtube.com/watch?v=YvI6kq_yXaM)
 
 ## Strengths of the Approach
 The look-up table strategy is tool-agnostic, though some tools (parametric CAD) will be easier than others, though there are likely scriptable mesh-based solutions that would work well.  In addition to being an open platform for device distribution, the simplicity of the look-up table makes the on-boarding process very accessible.  This approach also supports hybrid designs, in which some parts remain linearly-scaled meshes and other parts are parametrically-driven to eliminate the inconsistent clearances evolved from this linear scaling.  
