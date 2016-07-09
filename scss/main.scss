@@ -17,6 +17,10 @@ span {
     text-align: center;
 }
 
+//Override width for dialog buttons
+button span{
+    width: auto;
+}
 #configuratorPanel {
     position: absolute;
     top: 0;
