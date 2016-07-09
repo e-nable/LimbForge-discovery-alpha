@@ -77,6 +77,25 @@ $(document).ready(function(){
         downloadHand();
     });
 
+    // Terms of Use Dialog
+    $(function() {
+        $( "#tos-confirm" ).dialog({
+          resizable: false,
+          height:400,
+          width:500,
+          modal: true,
+          close: false,
+          draggable: false,
+          buttons: {
+            "I Agree": function() {
+              $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+              window.location.href = "http://enablingthefuture.org";
+            }
+          }
+        });
+    });   
 
     function zipFileName(specs){
         return "LimbForge_" + specs.hand + "_" + specs.size + ".zip";
