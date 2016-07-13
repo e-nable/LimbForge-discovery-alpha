@@ -72,13 +72,13 @@ $(document).ready(function(){
     });
 
     // Download Button
-    $('.downloadBtn').click(function(e){
+    $('#downloadBtn').click(function(e){
         e.preventDefault();
         downloadHand();
     });
 
     //Upload Image Button
-    $('.ref_btn').click(function(e){
+    $('#refBtn').click(function(e){
         e.preventDefault();
         loadReferenceImage();
     });
