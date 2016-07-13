@@ -24,6 +24,10 @@ var HandLoader = function(manifest,design){
 
             var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
             material.side = THREE.DoubleSide;
+            //Make the mesh semi-transparent
+            material.transparent = true;
+            material.opacity = 0.6;
+
             var mesh = new THREE.Mesh( geometry, material );
             mesh.castShadow = true;
             mesh.receiveShadow = true;
@@ -34,6 +38,7 @@ var HandLoader = function(manifest,design){
             mesh.position.set(0,0,0);
 
             scene.add( mesh );
+            // loadImage('img/reference.png');
 
             // Store references so the display model can be manipulated
             originalMesh = currentMesh = mesh;
