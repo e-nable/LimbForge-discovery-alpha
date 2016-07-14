@@ -164,25 +164,6 @@ $(document).ready(function(){
         });
     }
 
-    function loadReferenceImage() {
-        var filesSelected = ($("#fileItem"))[0].files;
-        if (filesSelected.length > 0)
-        {
-            var fileToLoad = filesSelected[0];
-
-            if (fileToLoad.type.match("image.*"))
-            {
-                var fileReader = new FileReader();
-                fileReader.onload = function(fileLoadedEvent)
-                {
-                    var imgPath = fileLoadedEvent.target.result;
-                    loadImage(imgPath);
-                };
-                fileReader.readAsDataURL(fileToLoad);
-            }
-        }
-    }
-
 	// this is called when the user presses the 'Request Design Help' button
 	function openDesignRequestURL() {
 		// load the url at designRequestURL (found in designs.json) into a new window

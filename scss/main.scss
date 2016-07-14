@@ -50,9 +50,11 @@ span {
     height: 80px;
     background-color: #DEDEDE;
 }
+
 .hand-graphic:hover {
     background-color: lightgrey;
 }
+
 .hand-graphic.selected:hover,.hand-graphic.selected {
     background-color: #337ab7;
     border-color: #2e6da4;
@@ -93,29 +95,3 @@ span {
     border: #204d74;
 }
 
-.image-container{
-  text-align: center;
-  border: solid 1px rgba(40,40,80,0.2);
-  border-radius: 10px;
-  padding:10px;
-  margin: 10px 0px;
-  background: rgba(0,0,0,0.1);
-}
-.ref_btn {
-    font-size: 18px;
-    text-decoration: none;
-    color: #FFF;
-    background-color: #389BF1;
-    border: #2e6da4;
-    padding: 15px 0;
-    border-radius: 6px;
-    width: 100%;
-    margin-top: 10px;
-    display: block;
-}
-.ref_btn:hover {
-    color:white;
-    text-decoration: none;
-    background-color: #286090;
-    border: #204d74;
-}
