@@ -112,6 +112,27 @@ function clearScene(){
     render();
 }
 
+function loadImage(imagePath){ //Dev-added Method
+  //load the image as a material
+  var img = new THREE.MeshBasicMaterial({
+    map:THREE.ImageUtils.loadTexture(imagePath)
+  });
+  img.map.needsUpdate = true;
+  img.transparent = false;
+  img.opacity = 0.8;
+  img.side = THREE.DoubleSide;
+
+  //create the plane with the image material and place it
+  var plane = new THREE.Mesh(new THREE.PlaneGeometry(250, 250),img);
+  plane.overdraw = true;
+  plane.rotation.set(-Math.PI*0.5,0,0.3 );
+  plane.position.set(66,6,-40);
+
+  //add the new plane to the scene
+  scene.add(plane);
+  setTimeout("render();",500);
+}
+
 //function animate() {
 //
 //    requestAnimationFrame( animate );

@@ -50,13 +50,17 @@ span {
     height: 80px;
     background-color: #DEDEDE;
 }
+
 .hand-graphic:hover {
     background-color: lightgrey;
 }
+
 .hand-graphic.selected:hover,.hand-graphic.selected {
     background-color: #337ab7;
     border-color: #2e6da4;
 }
+
+.spacer { margin:0; padding:0; height:10px; }
 
 #designSelector {
     font-size: 40px;
@@ -71,6 +75,7 @@ span {
     text-align: center;
 }
 
+
 .downloadBtn {
     font-size: 18px;
     text-decoration: none;
@@ -84,6 +89,9 @@ span {
     display: block;
 }
 .downloadBtn:hover {
+    color:white;
+    text-decoration: none;
     background-color: #286090;
     border: #204d74;
 }
+
