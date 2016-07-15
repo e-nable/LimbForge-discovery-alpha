@@ -54,7 +54,6 @@ p{
     margin-top: $standard-padding/2;
     margin-bottom: $standard-padding/3;
     &.nested-label{
-      margin-top: 0;
       em{
         font-weight: 600;
         text-transform: none;
@@ -108,15 +107,6 @@ input,select{
   }
   img{
     width: 100%;
-  }
-  .measurement-1{
-    padding-right:0;
-    input{
-      border-right: 0;
-    }
-  }
-  .measurement-2{
-    padding-left: 0;
   }
 }
 
