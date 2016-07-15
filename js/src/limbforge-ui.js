@@ -72,7 +72,7 @@ $(document).ready(function(){
     });
 
     // Download Button
-    $('.downloadBtn').click(function(e){
+    $('#downloadBtn').click(function(e){
         e.preventDefault();
         downloadHand();
     });
