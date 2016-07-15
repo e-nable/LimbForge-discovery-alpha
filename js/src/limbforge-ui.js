@@ -7,13 +7,17 @@ var specs = {
             name: "",
             directory: ""
         }
-    },
+     },
+	designRequestURL = "make4all.org",
     designs = [],
     hl;
 
 $(document).ready(function(){
     // Fetch the manifest so it's available everywhere!
     $.get('designs.json').then(function(data){
+		// store reference to designRequestURL so that the designRequest button works.
+		designRequestURL = data["requestURL"];
+		
         // store reference to full list of designs so they can be shown in a drop down.
         designs = data["designs"];
 
@@ -72,12 +76,18 @@ $(document).ready(function(){
     });
 
     // Download Button
-    $('.downloadBtn').click(function(e){
+    $('#downloadBtn').click(function(e){
         e.preventDefault();
         downloadHand();
     });
 
 
+	//Request New Design Help Button
+	$('#designBtn').click(function(e){
+		e.preventDefault();
+		openDesignRequestURL();
+	});
+	
     function zipFileName(specs){
         return "LimbForge_" + specs.hand + "_" + specs.size + ".zip";
     }
@@ -148,5 +158,13 @@ $(document).ready(function(){
             });
         });
     }
+
+	// this is called when the user presses the 'Request Design Help' button
+	function openDesignRequestURL() {
+		// load the url at designRequestURL (found in designs.json) into a new window
+		// and focus the browser on that window
+		var win = window.open(designRequestURL, '_blank');
+		win.focus();
+	}
 
 });
