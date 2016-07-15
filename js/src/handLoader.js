@@ -5,10 +5,10 @@ var HandLoader = function(manifest,design){
   flipped = false;
 
   function getParts(hand,l1,c4,design){
-    if (hand !== "left" && hand !== "right") throw new Error("Expected hand to be either right or left");
-    if (typeof l1 != "number" || l1 < 0 || l1 > 500) throw new Error("Expected L1 size to be a number between 22cm - 30cm");
-    if (typeof c4 != "number" || c4 < 0 || c4 > 500) throw new Error("Expected C4 size to be a number between 20cm - 30cm");
-    if (typeof design != "object") throw new Error("Expected design to be an object");
+    if (hand !== "left" && hand !== "right") throw alert("Expected hand to be either right or left");
+    if (typeof l1 != "number" || l1 < 0 || l1 > 500) throw alert("Expected L1 size to be a number between 22cm - 30cm");
+    if (typeof c4 != "number" || c4 < 0 || c4 > 500) throw alert("Expected C4 size to be a number between 20cm - 30cm");
+    if (typeof design != "object") throw alert("Expected design to be an object");
 
     return _.filter(manifest["parts"],function(part){
       return part["handedness"].indexOf(hand) > -1; // if "handedness" includes the specified handedness, it's included!
