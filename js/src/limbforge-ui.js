@@ -3,6 +3,9 @@
 var specs = {
         hand: "right",
         size: 100,
+        name: "matt",
+        l1: 100,
+        c4: 100,
         design: {
             name: "",
             directory: ""
@@ -74,12 +77,16 @@ $(document).ready(function(){
     // Download Button
     $('.downloadBtn').click(function(e){
         e.preventDefault();
+        specs.name = $("#name").val();
+        specs.l1 = parseInt($("#L1").val());
+        specs.c4 = parseInt($("#C4").val());
         downloadHand();
     });
 
 
     function zipFileName(specs){
-        return "LimbForge_" + specs.hand + "_" + specs.size + ".zip";
+      var today = new Date();
+        return "LimbForge_" + specs.name.replace(/ /g,'') + "_" + specs.hand + "_L1-" + specs.l1 + "_C4-" + specs.c4 + "_" + today + ".zip";
     }
 
     function GAObjectForSpecs(specs){
@@ -99,7 +106,7 @@ $(document).ready(function(){
     function reloadDisplayHand(){
         // Remove any prior hand that was there
         clearScene();
-
+        console.log(specs);
         // Display some STLs
         hl.loadDisplayHand(specs.hand,specs.size,specs.design,function(){
             ga('ec:addProduct',GAObjectForSpecs(specs));
@@ -126,6 +133,7 @@ $(document).ready(function(){
             'step': 2
         });
 
+        //send params to get files
         hl.getFiles(specs.hand,specs.size,specs.design,function(files){
             ga('send', {
                 hitType: 'event',
