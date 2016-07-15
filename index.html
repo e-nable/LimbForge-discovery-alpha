@@ -58,11 +58,11 @@
     <div class="row">
       <div class="measurement-1 col-xs-6">
         <p class="label nested-label">L1</p>
-        <input id="L1" type="number" placeholder="####" name="l1"><br>
+        <input id="L1" onchange="(function(el){el.value=(Math.round(el.value * 2) / 2).toFixed(1);})(this)" type="number" min="22" max="30" step='0.5' placeholder="22.0" name="l1"><br>
       </div>
       <div class="measurement-2 col-xs-6">
         <p class="label nested-label">C4</p>
-        <input id="C4" type="number" placeholder="####" name="c4"><br>
+        <input id="C4" onchange="(function(el){el.value=(Math.round(el.value * 2) / 2).toFixed(1);})(this)" type="number" min="20" max="30" step='0.5' placeholder="20.0" name="c4"><br>
       </div>
     </div>
 
