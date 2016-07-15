@@ -1,20 +1,20 @@
 {
     "description": "Enter as many parts as you want in this list. Available substitution variables are designName (RR), size (100), and handedness (left or right). In addition, whole parts can be excluded from an assembly by specifying the handedness here. The handedness string will be searched for the hand the user has requested (left or right), and if a match is found the part will be included. So ambidextrous parts can be labeled 'left right' to be included in all hands, and 'handed' parts can include only left or right in the handedness string",
-    "displayModel": "Ebe_forearm_L/forearm_C4-20_L1_220.stl",
+    "displayModel": "Ebe_forearm_L/forearm_L_C4-200_L1-220.stl",
     "parts": [
         {
             "qty": 1,
             "name": "forearm",
             "handedness": "left",
             "file_dir_template": "Ebe_forearm_L/",
-            "file_name_template": "forearm_<%= size %>.stl"
+            "file_name_template": "forearm_L_C4-<%= c4 %>_L1-<%= l1 %>.stl"
         },
         {
             "qty": 1,
             "name": "forearm",
             "handedness": "right",
             "file_dir_template": "Ebe_forearm_R/",
-            "file_name_template": "forearm_<%= size %>.stl"
+            "file_name_template": "forearm_R_C4-<%= c4 %>_L1-<%= l1 %>.stl"
         }
     ]
 }
