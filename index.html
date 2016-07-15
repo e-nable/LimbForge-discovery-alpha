@@ -54,14 +54,14 @@
       <input id="name" type="text" placeholder="Matt Hova" name="name"><br>
     </div>
 
-    <p class="label" data-toggle="modal" data-target="#measurementModal">Sizing Measurements</p>
+    <p class="label">Sizing Measurements <span class="question" data-toggle="modal" data-target="#measurementModal">?</span></p>
     <div class="row">
       <div class="measurement-1 col-xs-6">
-        <p class="label nested-label">L1</p>
+        <p class="label nested-label">L1 <em>(cm)</em></p>
         <input id="L1" onchange="(function(el){el.value=(Math.round(el.value * 2) / 2).toFixed(1);})(this)" type="number" min="22" max="30" step='0.5' placeholder="22.0" name="l1"><br>
       </div>
       <div class="measurement-2 col-xs-6">
-        <p class="label nested-label">C4</p>
+        <p class="label nested-label">C4 <em>(cm)</em></p>
         <input id="C4" onchange="(function(el){el.value=(Math.round(el.value * 2) / 2).toFixed(1);})(this)" type="number" min="20" max="30" step='0.5' placeholder="20.0" name="c4"><br>
       </div>
     </div>
