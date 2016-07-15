@@ -3,6 +3,7 @@
 @import "jquery-ui.scss";
 @import "flatslider.scss";
 
+
 $standard-padding: 30px;
 
 body {
@@ -12,6 +13,7 @@ body {
   overflow: hidden;
 }
 a{
+  cursor: pointer;
   text-align: center;
   font-weight: 400;
   &.downloadBtn {
@@ -43,8 +45,13 @@ p{
   &.label{
     font-weight: bold;
     letter-spacing: 1px;
+    color: #333;
     text-transform: uppercase;
+    margin-top: $standard-padding/2;
     margin-bottom: $standard-padding/7;
+    &.nested-label{
+      margin-top: 0;
+    }
   }
 }
 
@@ -103,6 +110,12 @@ input,select{
   &.selected{
     background-color: #333E48;
     border-color: #333E48;
+  }
+}
+
+.modal-content{
+  img{
+    width:100%;
   }
 }
 

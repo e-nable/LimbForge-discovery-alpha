@@ -53,15 +53,36 @@
       <input type="text" placeholder="Matt Hova" name="name"><br>
     </div>
 
-    <p class="label">Sizing Measurements</p>
+    <p class="label" data-toggle="modal" data-target="#measurementModal">Sizing Measurements</p>
     <div class="row">
       <div class="measurement-1 col-xs-6">
-        <p class="label">L1</p>
+        <p class="label nested-label">L1</p>
         <input type="text" placeholder="####" name="l1"><br>
       </div>
       <div class="measurement-2 col-xs-6">
-        <p class="label">C4</p>
+        <p class="label nested-label">C4</p>
         <input type="text" placeholder="####" name="c4"><br>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="measurementModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">How to Measure</h4>
+          </div>
+          <div class="modal-body">
+            <img src="img/L1C4.jpg">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
