@@ -89,7 +89,8 @@ input,select{
   top: 0;
   left: 0;
   width: 400px;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,1);
+  border-right: 1px solid rgba(0,0,0,0.125);
   opacity: 1;
   box-sizing: border-box;
   padding: 20px;
