@@ -55,6 +55,21 @@ p{
     margin-bottom: $standard-padding/3;
     &.nested-label{
       margin-top: 0;
+      em{
+        font-weight: 600;
+        text-transform: none;
+        opacity: .6;
+      }
+    }
+    .question{
+      cursor: pointer;
+      color: white;
+      background: #333;
+      padding: 2px 5px;
+      border-radius: 100%;
+      font-size: 11px;
+      font-weight: 400;
+      opacity: .5;
     }
   }
 }
