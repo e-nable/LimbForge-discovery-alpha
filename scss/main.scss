@@ -41,6 +41,7 @@ a{
 p{
   &.feedback{
     text-align: center;
+    padding-top: $standard-padding/2;
   }
   &.label{
     font-weight: bold;
@@ -59,7 +60,7 @@ p{
 }
 
 input,select{
-  border: 1px solid  rgba(51,62,72,0.4);
+  border: 1px solid  rgba(0,0,0,0.125);
   padding: $standard-padding/2;
   -webkit-appearance: none;
   width: 100%;
@@ -72,12 +73,13 @@ input,select{
   position: absolute;
   top: 0;
   left: 0;
-  width: 400px;
-  margin: 20px;
+  width: 300px;
   background-color: rgba(255,255,255,0.7);
   opacity: 1;
   box-sizing: border-box;
   padding: 20px;
+  height: 100vh;
+  overflow: scroll;
   &>.title {
     display: block;
     margin-bottom: 10px;
