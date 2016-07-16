@@ -78,14 +78,27 @@ $(document).ready(function(){
   $('.downloadBtn').click(function(e){
     e.preventDefault();
     specs.name = $("#name").val();
-    specs.l1 = translateValue($("#L1").val());
-    specs.c4 = translateValue($("#C4").val());
+    specs.l1 = translateValueL1($("#L1").val());
+    specs.c4 = translateValueC4($("#C4").val());
     downloadHand();
   });
 
-  function translateValue(input){
+  function translateValueL1(input){
+    // removing decimal from number
     var base_num = parseFloat(input.replace(".", ""));
-    return base_num
+    // round up to nearest 5
+    var result = Math.ceil(base_num/5)*5;
+    console.log("L1 round up " + result);
+    return result
+  }
+
+  function translateValueC4(input){
+    // removing decimal from number
+    var base_num = parseFloat(input.replace(".", ""));
+    // round down to nearest 5
+    var result = Math.floor(base_num/5)*5;
+    console.log("C4 round down " + result);
+    return result
   }
 
   function zipFileName(specs){
