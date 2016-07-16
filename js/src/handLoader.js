@@ -29,7 +29,7 @@ var HandLoader = function(manifest,design){
 
       // Manipulate the mesh according to display pref's, specifically "hand" (if it needs to be mirrored) and
       // "size" to zoom it with reference to a fixed grid
-      mesh.rotation.set(-Math.PI*0.45,0,0 );
+      mesh.rotation.set(-Math.PI*0.5,0,0 );
       mesh.position.set(0,0,0);
 
       scene.add( mesh );
