@@ -6,6 +6,11 @@
     "jquery-ui": "1.11.4",
     "zip-js": "~1.0.0"
   },
+  "overrides": {
+  	"zip-js": {
+  		"main": ["WebContent/zip.js"]
+  	}
+  },
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~2.5.3"
