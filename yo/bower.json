@@ -7,15 +7,15 @@
     "zip-js": "~1.0.0",
     "underscore": "1.8.3"
   },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.5.3"
+  },
   "overrides": {
     "zip-js": {
       "main": [
         "WebContent/zip.js"
       ]
     }
-  },
-  "devDependencies": {
-    "chai": "~3.5.0",
-    "mocha": "~2.5.3"
   }
 }
