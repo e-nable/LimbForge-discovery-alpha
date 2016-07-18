@@ -20,28 +20,45 @@
     
   </head>
   <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Sass</li>
-        <li>jQuery</li>
-      </ul>
+    <!-- Structure for the UI: -->
+    <div id="configuratorPanel">
+      <span class="title">Configure A Hand</span>
+      <div class="handedness">
+        <img class="hand-graphic selected" src="img/left.png"  data-selectedhand="left" />
+        <img class="hand-graphic" src="img/right.png" data-selectedhand="right" />
+      </div>
+
+      <select id="designSelector">
+      </select>
+
+      <div class="sizing">
+        <h5 id="sizeFeedback">Size: 100%</h5>
+        <div class="flat-slider" id="flat-slider"></div>
+      </div>
+
+      <div class="download-container">
+        <a href="#" class="downloadBtn" >Download</a>
+      </div>
+      <a href="http://bit.ly/1N2YWHh" target="_blank">
+        <button class="download-container">
+          Submit Feedback!
+        </button>
+      </a>
     </div>
     
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+    <script type="text/javascript">
+      // Google analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71962410-1', 'auto');
+      ga('send', 'pageview');
+
+      // Use enhanced ecommerce plugin to get a wider variety of event-tracking fields
+      // see https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#loadit
+      ga('require', 'ec');
     </script>
 
     <!-- build:js scripts/vendor.js -->
