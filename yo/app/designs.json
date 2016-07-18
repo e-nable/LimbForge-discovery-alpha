@@ -1,0 +1,12 @@
+{
+    "designs": [
+        {
+            "name": "Raptor Reloaded",
+            "directory": "STLs/RR/"
+        },
+        {
+        	"name":  "Thumbless RR (BETA)",
+        	"directory":  "STLs/TLRR/"
+        }
+    ]
+}
