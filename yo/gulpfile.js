@@ -88,9 +88,11 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
+    'app/STLs/**',
     '!app/*.html'
   ], {
-    dot: true
+    dot: true,
+    base: 'app'
   }).pipe(gulp.dest('dist'));
 });
 
