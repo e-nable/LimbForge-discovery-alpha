@@ -1,5 +1,5 @@
 var HandLoader = function(manifest,design){
-    if (!manifest || !manifest.parts) throw new Error("Expected a manifest with a parts array.");
+    if (!manifest || !manifest.parts) throw new Error('Expected a manifest with a parts array.');
 
     var currentMesh, originalMesh, flippedMesh,
         flipped = false;
@@ -7,12 +7,12 @@ var HandLoader = function(manifest,design){
     function getParts(hand,size,design){
 
 
-        if (hand !== "left" && hand !== "right") throw new Error("Expected hand to be either right or left");
-        if (typeof size != "number" || size < 100 || size > 200) throw new Error("Expected size to be a number between 100 and 200");
-        if (typeof design != "object") throw new Error("Expected design to be an object");
+        if (hand !== 'left' && hand !== 'right') throw new Error('Expected hand to be either right or left');
+        if (typeof size != 'number' || size < 100 || size > 200) throw new Error('Expected size to be a number between 100 and 200');
+        if (typeof design != 'object') throw new Error('Expected design to be an object');
 
-        return _.filter(manifest["parts"],function(part){
-            return part["handedness"].indexOf(hand) > -1; // if "handedness" includes the specified handedness, it's included!
+        return _.filter(manifest['parts'],function(part){
+            return part['handedness'].indexOf(hand) > -1; // if "handedness" includes the specified handedness, it's included!
         });
     }
 
@@ -20,7 +20,7 @@ var HandLoader = function(manifest,design){
         // This function assumes there's one display model which is scaled and mirrored for the user's benefit.
         // This display model is NOT THE SAME as the files that are downloaded for printing.
         var loader = new THREE.STLLoader();
-        loader.load( design.directory + manifest["displayModel"], function ( geometry, data ) {
+        loader.load( design.directory + manifest['displayModel'], function ( geometry, data ) {
 
             var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
             material.side = THREE.DoubleSide;
