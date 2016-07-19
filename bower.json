@@ -1,0 +1,22 @@
+{
+  "name": "yo",
+  "private": true,
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery-ui": "1.11.4",
+    "zip-js": "~1.0.0",
+    "underscore": "1.8.3",
+    "threejs": "r73"    
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.5.3"
+  },
+  "overrides": {
+    "zip-js": {
+      "main": [
+        "WebContent/zip.js"
+      ]
+    }
+  }
+}
