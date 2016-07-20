@@ -107,14 +107,14 @@ $(document).ready(function(){
   function GAObjectForSpecs(specs){
     // Create a 'productFieldObject' from the current hand specs
     return {
-      'id': specs.design.name + specs.size + specs.hand,				// Product ID (string).
+      'id': specs.design.name + specs.size + specs.hand, // Product ID (string).
       'name': specs.design.name + "_" + specs.size + "_" + specs.hand, // Product name (string).
-      'category': specs.design.name,   								// Product category (string).
-      'variant': specs.hand,            							// Product variant (string).
-      'position': specs.size           							// Product position (number).
-      //'dimension1': 'Member',            							// Custom dimension (string).
-      //'brand': 'Google',                							// Product brand (string).
-      //'list': 'Search Results',         							// Product list (string).
+      'category': specs.design.name, // Product category (string).
+      'variant': specs.hand, // Product variant (string).
+      'position': specs.size // Product position (number).
+      //'dimension1': 'Member', // Custom dimension (string).
+      //'brand': 'Google', // Product brand (string).
+      //'list': 'Search Results', // Product list (string).
     }
   }
 
