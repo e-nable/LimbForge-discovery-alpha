@@ -3,7 +3,8 @@
 var specs = {
   hand: "left",
   size: 100,
-  name: "matt",
+  fname: "Max",
+  lname: "Hova",
   l1: 23,
   c4: 23,
   design: {
@@ -77,7 +78,8 @@ $(document).ready(function(){
   // Download Button
   $('.downloadBtn').click(function(e){
     e.preventDefault();
-    specs.name = $("#name").val();
+    specs.fname = $("#fname").val();
+    specs.lname = $("#lname").val();
     specs.l1 = translateValueL1(Math.round($("#L1").val() * 10) / 10);
     specs.c4 = translateValueC4(Math.round($("#C4").val() * 10) / 10);
     downloadHand();
@@ -101,7 +103,8 @@ $(document).ready(function(){
 
   function zipFileName(specs){
     var today = new Date();
-    return "LimbForge_" + specs.name.replace(/ /g,'') + "_" + specs.hand + "_L1-" + specs.l1 + "_C4-" + specs.c4 + "_" + today + ".zip";
+    var formatted_date =  today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+    return specs.lname.replace(/ /g,'') + "_" + specs.fname.replace(/ /g,'') + "_forearm_" + specs.hand.charAt(0).toUpperCase() + "_" + formatted_date + ".zip";
   }
 
   function GAObjectForSpecs(specs){
