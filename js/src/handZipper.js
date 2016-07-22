@@ -40,8 +40,9 @@ var HandZipper = (function(obj) {
 
                 function nextFile() {
                     var file = files[addIndex];
+                    file.name =  specs.lname.replace(/ /g,'') + "_" + specs.fname.replace(/ /g,'') + "_forearm_" + specs.hand.charAt(0).toUpperCase() + ".stl";
                     onadd(file);
-                    zipWriter.add(specs.lname.replace(/ /g,'') + "_" + specs.fname.replace(/ /g,'') + "_forearm_" + specs.hand.charAt(0).toUpperCase(), new zip.BlobReader(file.blob), function() {
+                    zipWriter.add(file.name, new zip.BlobReader(file.blob), function() {
                         addIndex++;
                         if (addIndex < files.length)
                             nextFile();
