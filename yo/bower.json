@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "2.1.4",
     "bootstrap": "4.0.0-alpha.2",
-    "three.js": "threejs#r73"
+    "three.js": "threejs#r73",
+    "jquery-ui": "1.11.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
