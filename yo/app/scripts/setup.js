@@ -104,7 +104,7 @@ function render() {
 function clearScene(){
     // Don't mutate while removing
     _.each(_.clone(scene.children),function(child){
-        if (child.type == "Mesh") {
+        if (child.type == 'Mesh') {
             scene.remove(child);
         }
     });

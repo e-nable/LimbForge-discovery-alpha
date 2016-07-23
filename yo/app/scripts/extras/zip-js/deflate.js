@@ -34,7 +34,7 @@
  */
 
 (function(global) {
-	"use strict";
+	'use strict';
 
 	// Global
 
@@ -425,17 +425,17 @@
 			new Config(4, 4, 16, 16, SLOW), new Config(8, 16, 32, 32, SLOW), new Config(8, 16, 128, 128, SLOW), new Config(8, 32, 128, 256, SLOW),
 			new Config(32, 128, 258, 1024, SLOW), new Config(32, 258, 258, 4096, SLOW) ];
 
-	var z_errmsg = [ "need dictionary", // Z_NEED_DICT
+	var z_errmsg = [ 'need dictionary', // Z_NEED_DICT
 	// 2
-	"stream end", // Z_STREAM_END 1
-	"", // Z_OK 0
-	"", // Z_ERRNO (-1)
-	"stream error", // Z_STREAM_ERROR (-2)
-	"data error", // Z_DATA_ERROR (-3)
-	"", // Z_MEM_ERROR (-4)
-	"buffer error", // Z_BUF_ERROR (-5)
-	"",// Z_VERSION_ERROR (-6)
-	"" ];
+	'stream end', // Z_STREAM_END 1
+	'', // Z_OK 0
+	'', // Z_ERRNO (-1)
+	'stream error', // Z_STREAM_ERROR (-2)
+	'data error', // Z_DATA_ERROR (-3)
+	'', // Z_MEM_ERROR (-4)
+	'buffer error', // Z_BUF_ERROR (-5)
+	'',// Z_VERSION_ERROR (-6)
+	'' ];
 
 	// block not completed, need more input or more output
 	var NeedMore = 0;
@@ -1996,7 +1996,7 @@
 		var flush = Z_NO_FLUSH;
 		var buf = new Uint8Array(bufsize);
 		var level = options ? options.level : Z_DEFAULT_COMPRESSION;
-		if (typeof level == "undefined")
+		if (typeof level == 'undefined')
 			level = Z_DEFAULT_COMPRESSION;
 		z.deflateInit(level);
 		z.next_out = buf;
@@ -2013,7 +2013,7 @@
 				z.avail_out = bufsize;
 				err = z.deflate(flush);
 				if (err != Z_OK)
-					throw new Error("deflating: " + z.msg);
+					throw new Error('deflating: ' + z.msg);
 				if (z.next_out_index)
 					if (z.next_out_index == bufsize)
 						buffers.push(new Uint8Array(buf));
@@ -2039,7 +2039,7 @@
 				z.avail_out = bufsize;
 				err = z.deflate(Z_FINISH);
 				if (err != Z_STREAM_END && err != Z_OK)
-					throw new Error("deflating: " + z.msg);
+					throw new Error('deflating: ' + z.msg);
 				if (bufsize - z.avail_out > 0)
 					buffers.push(new Uint8Array(buf.subarray(0, z.next_out_index)));
 				bufferSize += z.next_out_index;

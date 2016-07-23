@@ -1,12 +1,12 @@
 /* jshint worker:true */
 (function main(global) {
-	"use strict";
+	'use strict';
 
 	if (global.zWorkerInitialized)
 		throw new Error('z-worker.js should be run only once');
 	global.zWorkerInitialized = true;
 
-	addEventListener("message", function(event) {
+	addEventListener('message', function(event) {
 		var message = event.data, type = message.type, sn = message.sn;
 		var handler = handlers[type];
 		if (handler) {

@@ -1,5 +1,5 @@
 // Set up zip.js
-zip.workerScriptsPath = "extras/zip-js/";
+zip.workerScriptsPath = 'extras/zip-js/';
 
 
 // Zip 'em up for download:
@@ -12,7 +12,7 @@ var HandZipper = (function(obj) {
     }
 
     function createTempFile(callback) {
-        var tmpFilename = "tmp.zip";
+        var tmpFilename = 'tmp.zip';
         requestFileSystem(TEMPORARY, 4 * 1024 * 1024 * 1024, function(filesystem) {
             function create() {
                 filesystem.root.getFile(tmpFilename, {
@@ -40,7 +40,7 @@ var HandZipper = (function(obj) {
 
                 function nextFile() {
                     var file = files[addIndex];
-                    file.name =  specs.lname.replace(/ /g,'') + "_" + specs.fname.replace(/ /g,'') + "_forearm_" + specs.hand.charAt(0).toUpperCase() + ".stl";
+                    file.name =  specs.lname.replace(/ /g,'') + '_' + specs.fname.replace(/ /g,'') + '_forearm_' + specs.hand.charAt(0).toUpperCase() + '.stl';
                     onadd(file);
                     zipWriter.add(file.name, new zip.BlobReader(file.blob), function() {
                         addIndex++;
@@ -61,7 +61,7 @@ var HandZipper = (function(obj) {
 
                 if (zipWriter)
                     nextFile();
-                else if (creationMethod == "Blob") {
+                else if (creationMethod == 'Blob') {
                     writer = new zip.BlobWriter();
                     createZipWriter();
                 } else {
@@ -74,7 +74,7 @@ var HandZipper = (function(obj) {
             },
             getBlobURL : function(callback) {
                 zipWriter.close(function(blob) {
-                    var blobURL = creationMethod == "Blob" ? URL.createObjectURL(blob) : zipFileEntry.toURL();
+                    var blobURL = creationMethod == 'Blob' ? URL.createObjectURL(blob) : zipFileEntry.toURL();
                     callback(blobURL);
                     zipWriter = null;
                 });
@@ -86,20 +86,20 @@ var HandZipper = (function(obj) {
     })();
 
     // General setup:
-    model.setCreationMethod("Blob");
+    model.setCreationMethod('Blob');
 
     // Utility. Not part of model, since it deals with DOM
     function downloadZip(zipName){
-        if (typeof navigator.msSaveBlob == "function") {
+        if (typeof navigator.msSaveBlob == 'function') {
             model.getBlob(function(blob) {
                 navigator.msSaveBlob(blob, filenameInput.value);
             });
         } else {
             model.getBlobURL(function(blobURL) {
                 var clickEvent;
-                clickEvent = document.createEvent("MouseEvent");
-                clickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                var downloadButton = document.createElement("a");
+                clickEvent = document.createEvent('MouseEvent');
+                clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                var downloadButton = document.createElement('a');
                 downloadButton.href = blobURL;
                 downloadButton.download = zipName;
                 document.body.appendChild(downloadButton);
@@ -125,7 +125,7 @@ var HandZipper = (function(obj) {
             },function(){
                 // onend
                 var duration = (new Date()).getTime() - startZipTime;
-                console.log('Complete! Total time to compress: ' + duration + "ms");
+                console.log('Complete! Total time to compress: ' + duration + 'ms');
 
                 // Do the download
                 downloadZip(zipName);
