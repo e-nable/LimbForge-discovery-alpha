@@ -6,7 +6,8 @@
     "bootstrap": "4.0.0-alpha.2",
     "three.js": "threejs#r73",
     "jquery-ui": "1.11.4",
-    "zip-js": "1.0.0"
+    "zip-js": "1.0.0",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
