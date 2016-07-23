@@ -1,5 +1,5 @@
 // Set up zip.js
-zip.workerScriptsPath = "js/lib/zip/";
+zip.workerScriptsPath = "extras/zip-js/";
 
 
 // Zip 'em up for download:
