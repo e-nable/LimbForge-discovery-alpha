@@ -5,10 +5,18 @@
     "jquery": "2.1.4",
     "bootstrap": "4.0.0-alpha.2",
     "three.js": "threejs#r73",
-    "jquery-ui": "1.11.4"
+    "jquery-ui": "1.11.4",
+    "zip-js": "1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
+  },
+  "overrides": {
+    "zip-js": {
+      "main": [
+        "WebContent/zip.js"
+      ]
+    }
   }
 }
