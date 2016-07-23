@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yo</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>LimbForge</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -20,52 +20,98 @@
     
   </head>
   <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">yo</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
+  <!-- Structure for the UI: -->
+  <div id="configuratorPanel">
+    <span class="title">Limbforge</span>
+    <p>
+    <div class="handedness">
+      <p class="label">Hand</p>
+      <img class="hand-graphic selected" src="img/left.png"  data-selectedhand="left" />
+      <img class="hand-graphic" src="img/right.png" data-selectedhand="right" />
+    </div>
+    <p class="label">Model</p>
+    <select id="designSelector">
+    </select>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="label">Patient Name</p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="fname col-xs-6">
+        <p class="label">First</p>
+        <input id="fname" type="text" placeholder="Max" name="name"><br>
+      </div>
+      <div class="lname col-xs-6">
+        <p class="label">Last</p>
+        <input id="lname" type="text" placeholder="Hova" name="name"><br>
+      </div>
+    </div>
+
+    <p class="label">Sizing Measurements <span class="question" data-toggle="modal" data-target="#measurementModal">?</span></p>
+    <img src="img/L1C4.jpg">
+    <div class="row">
+      <div class="measurement-1 col-xs-6">
+        <p class="label">Sound Limb</p>
+        <p class="label nested-label">C1 <em>(cm)</em></p>
+        <input id="C1"  type="number" step='0.5' placeholder="22.0" name="c1"><br>
+        <p class="label nested-label">C2 <em>(cm)</em></p>
+        <input id="C2"  type="number" step='0.5' placeholder="22.0" name="c2"><br>
+        <p class="label nested-label">C3 <em>(cm)</em></p>
+        <input id="C3"  type="number" step='0.5' placeholder="22.0" name="c3"><br>
+        <p class="label nested-label">L1 <em>(cm)</em></p>
+        <input id="L1"  type="number" min="22" max="30" step='0.5' placeholder="22.0" name="l1"><br>
+      </div>
+      <div class="measurement-2 col-xs-6">
+        <p class="label">Residual Limb</p>
+        <p class="label nested-label">C4 <em>(cm)</em></p>
+        <input id="C4"  type="number" min="20" max="30" step='0.5' placeholder="20.0" name="c4"><br>
+        <p class="label nested-label">L2 <em>(cm)</em></p>
+        <input id="L2"  type="number" step='0.5' placeholder="20.0" name="l2"><br>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="measurementModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">How to Measure</h4>
+          </div>
+          <div class="modal-body">
+            <img src="img/L1C4.jpg">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="download-container">
+      <a href="#" class="downloadBtn">Download</a>
+    </div>
+    <p class="feedback"><em>have an idea?</em> <strong><a href="http://bit.ly/1N2YWHh" target="_blank">Submit feedback!</a></strong></p>
+  </div>
     
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+  <script type="text/javascript">
+    // Google analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71962410-1', 'auto');
+    ga('send', 'pageview');
+
+    // Use enhanced ecommerce plugin to get a wider variety of event-tracking fields
+    // see https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#loadit
+    ga('require', 'ec');
     </script>
 
     <!-- build:js scripts/vendor.js -->
