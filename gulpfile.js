@@ -89,7 +89,8 @@ gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
     '!app/*.html',
-    'app/scripts/extras/**'
+    'app/scripts/extras/**',
+    'app/STLs/**'
   ], {
     dot: true,
     base: 'app'
