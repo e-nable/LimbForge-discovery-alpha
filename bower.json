@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "2.1.4",
+    "tether": "^1.3.3",
     "bootstrap": "4.0.0-alpha.2",
     "three.js": "threejs#r73",
     "jquery-ui": "1.11.4",
