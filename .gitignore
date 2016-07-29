@@ -1,4 +1,5 @@
 .DS_Store
+*.log
 node_modules
 dist
 .tmp
@@ -58,7 +59,7 @@ fabric.properties
 
 # *.iml
 # modules.xml
-# .idea/misc.xml 
+# .idea/misc.xml
 # *.ipr
 
 
