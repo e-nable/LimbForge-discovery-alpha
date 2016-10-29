@@ -1,6 +1,6 @@
 
 # DEPRICATED ALERT
-## This app is depricated. Please make any new Limbforge contributions on the [WEB APP](https://github.com/e-nable/LimbForge-Web-App)
+## This app is depricated. Please make any new Limbforge contributions on [The Official Limbforge WEB APP](https://github.com/e-nable/LimbForge-Web-App)
 
 ### How this Repository Works
 LimbForge leverages look-up tables populated with pre-sized versions of every part needed to assemble a device.  Historically, "sizing" has meant linear scaling in the lexicon of e-NABLE devices, but LimbForge allows for a more intentional sizing strategy that has many benefits, including, but not limited to:
